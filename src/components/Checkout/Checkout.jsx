@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext/CartContext";
 
 export default function Checkout() {
-    let { checkout,setUserId,userId } = useContext(CartContext);
+    let { checkout } = useContext(CartContext);
     let [isLoad, setisLoad] = useState(false);
 
     const yupObj = validation.object().shape({
@@ -33,8 +33,6 @@ export default function Checkout() {
         setisLoad(true);
         let res = await checkout(url, formValues);
         if (res.status === 'success') {
-            setUserId(userId);
-            await new Promise(resolve => setTimeout(resolve, 200));
             window.location.href = res.session.url;
             setisLoad(false);
         }
