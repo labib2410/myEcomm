@@ -2,9 +2,11 @@
   "name": "myecomm",
   "private": true,
   "version": "0.0.0",
-  
+  "homepage": "https://omar mohamed labib.github.io/project",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
