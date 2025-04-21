@@ -1,0 +1,164 @@
+#root,
+.App {
+    overflow: hidden;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: #28a745 !important; /* Bootstrap green */
+    font-size: 24px; /* optional: adjust size */
+}
+.active{
+    border-bottom:2px solid green !important;
+    color : green !important;
+}
+
+
+/* li a {
+    color: black;
+} */
+
+
+.product-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card button {
+    font-weight: 600;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 50px;
+}
+
+.product-card button:hover {
+    background-color: #28a745;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: #28a745;
+}
+
+.product-card button:disabled {
+    background-color: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+    border-color: #ddd;
+    transform: scale(1);
+}
+
+.product-card button .fa-spinner {
+    transition: transform 0.3s ease;
+}
+
+.product-card button:disabled .fa-spinner {
+    transform: rotate(180deg);
+}
+.related-slider .card-footer button.btn{
+    font-weight: 600;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 50px;
+}
+.related-slider .card-footer button.btn:hover{
+    background-color: #28a745;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-color: #28a745;
+}
+
+
+.related-slider .card-footer button.btn:disabled {
+    background-color: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+    border-color: #ddd;
+    transform: scale(1);
+}
+
+.related-slider .card-footer button .fa-spinner {
+    transition: transform 0.3s ease;
+}
+
+.related-slider .card-footer button:disabled .fa-spinner {
+    transform: rotate(180deg);
+}
+
+
+
+.related-slider .product img {
+    object-fit: cover;
+    height: 180px;
+}
+
+@media (max-width: 767px) {
+    .related-slider .product {
+        padding: 1rem;
+    }
+
+    .related-slider .product img {
+        height: 150px;
+    }
+}
+
+.cateSlider-home {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.cateSlider-home:hover {
+    transform: scale(1.03);
+}
+
+.slider-img {
+    height: 400px;
+    object-fit: fill;
+    border-radius: 8px;
+}
+
+.side-img {
+    height: 200px;
+    object-fit: fill;
+    border-radius: 8px;
+}
+
+.category img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    /* Better than fill */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Hover effect */
+.category img:hover {
+    transform: scale(1.02);
+}
+
+/* 📱 Responsive height for smaller screens */
+@media (max-width: 768px) {
+    .category img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .category img {
+        height: 150px;
+    }
+}
