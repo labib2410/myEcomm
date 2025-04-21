@@ -24,7 +24,7 @@ let query = new QueryClient();
 
 const router = createBrowserRouter([
   {
-    path: "/", element: <Layout />, children: [
+    path: "https://labib2410.github.io/", element: <Layout />, children: [
       { index: true, element: <ProtectedRoute> <Home /></ProtectedRoute> },
       { path: "products", element: <ProtectedRoute> <Products /></ProtectedRoute> },
       { path: "productdetails/:id/:category", element: <ProtectedRoute> <ProductDetails /></ProtectedRoute> },
