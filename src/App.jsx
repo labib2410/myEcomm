@@ -34,7 +34,7 @@ const router = createHashRouter([
       { path: "categories", element: <ProtectedRoute><Categories /></ProtectedRoute> },
       { path: "signup", element: <SignUp /> },
       { path: "signin", element: <SignIn /> },
-      { path: "*", element: <Orders /> }
+      { path: "*", element: <Error404 /> }
     ]
   }
 ]);
