@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
@@ -15,24 +15,23 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import CartContextProvider from './Context/CartContext/CartContext';
 import Cart from './components/Cart/Cart';
-import  { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import Checkout from './components/Checkout/Checkout';
 import Orders from './components/Orders/Orders';
 
+const query = new QueryClient();
 
-let query = new QueryClient();
-
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "https://labib2410.github.io/myEcomm/", element: <Layout />, children: [
-      { index: true, element: <ProtectedRoute> <Home /></ProtectedRoute> },
-      { path: "products", element: <ProtectedRoute> <Products /></ProtectedRoute> },
-      { path: "productdetails/:id/:category", element: <ProtectedRoute> <ProductDetails /></ProtectedRoute> },
-      { path: "brands", element: <ProtectedRoute> <Brands /></ProtectedRoute> },
-      { path: "cart", element: <ProtectedRoute> <Cart /></ProtectedRoute> },
-      { path: "checkout", element: <ProtectedRoute> <Checkout /></ProtectedRoute> },
-      { path: "allorders", element: <ProtectedRoute> <Orders /></ProtectedRoute> },
-      { path: "categories", element: <ProtectedRoute> <Categories /></ProtectedRoute> },
+    path: "/", element: <Layout />, children: [
+      { index: true, element: <ProtectedRoute><Home /></ProtectedRoute> },
+      { path: "products", element: <ProtectedRoute><Products /></ProtectedRoute> },
+      { path: "productdetails/:id/:category", element: <ProtectedRoute><ProductDetails /></ProtectedRoute> },
+      { path: "brands", element: <ProtectedRoute><Brands /></ProtectedRoute> },
+      { path: "cart", element: <ProtectedRoute><Cart /></ProtectedRoute> },
+      { path: "checkout", element: <ProtectedRoute><Checkout /></ProtectedRoute> },
+      { path: "allorders", element: <ProtectedRoute><Orders /></ProtectedRoute> },
+      { path: "categories", element: <ProtectedRoute><Categories /></ProtectedRoute> },
       { path: "signup", element: <SignUp /> },
       { path: "signin", element: <SignIn /> },
       { path: "*", element: <Error404 /> }
@@ -44,10 +43,10 @@ function App() {
   return (
     <QueryClientProvider client={query}>
       <UserContextProvider>
-      <CartContextProvider>
-        <RouterProvider router={router} />
-        <Toaster />
-        <ReactQueryDevtools/>
+        <CartContextProvider>
+          <RouterProvider router={router} />
+          <Toaster />
+          <ReactQueryDevtools />
         </CartContextProvider>
       </UserContextProvider>
     </QueryClientProvider>
@@ -55,3 +54,4 @@ function App() {
 }
 
 export default App;
+
