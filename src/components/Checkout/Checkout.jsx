@@ -29,7 +29,7 @@ export default function Checkout() {
             city: ''
         },
         validationSchema: yupObj,
-        onSubmit: () => handleCheckout('https://labib2410.github.io', formik.values)
+        onSubmit: () => handleCheckout('https://labib2410.github.io/myEcomm', formik.values)
     });
 
     async function handleCheckout(url, formValues) {
