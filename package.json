@@ -2,7 +2,7 @@
   "name": "myecomm",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://omar mohamed labib.github.io/project",
+  "homepage": "https://omar mohamed labib.github.io/myEcomm",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
