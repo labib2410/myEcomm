@@ -26,18 +26,27 @@ export default function Checkout() {
             city: ''
         },
         validationSchema: yupObj,
-        onSubmit: () => handleCheckout('https://labib2410.github.io', formik.values)
+        onSubmit: () => handleCheckout('https://labib2410.github.io/#', formik.values)
     });
 
     async function handleCheckout(url, formValues) {
         setisLoad(true);
-        let res = await checkout(url, formValues);
-        if (res.status === 'success') {
-            window.location.href = res.session.url;
+        try {
+            const res = await checkout(url, formValues);
+            if (res.status === 'success') {
+                window.location.href = res.session.url;
+            } else {
+                // You can show an error message here if needed
+                console.error('Checkout failed:', res);
+            }
+        } catch (error) {
+            console.error('Error during checkout:', error);
+            // Optionally show error to user
+        } finally {
             setisLoad(false);
         }
-
     }
+
 
     return (
         <>
