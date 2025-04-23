@@ -29,7 +29,7 @@ export default function Checkout() {
             city: ''
         },
         validationSchema: yupObj,
-        onSubmit: () => handleCheckout('https://labib2410.github.io/#', formik.values)
+        onSubmit: () => handleCheckout('https://labib2410.github.io/myEcomm/', formik.values)
     });
 
     async function handleCheckout(url, formValues) {
@@ -37,8 +37,8 @@ export default function Checkout() {
         try {
             const res = await checkout(url, formValues);
             if (res.status === 'success') {
-                // window.location.href = res.session.url;
-                navigate('/allorders');
+                window.location.href = res.session.url;
+                // navigate('/allorders');
             } else {
                 // You can show an error message here if needed
                 console.error('Checkout failed:', res);
